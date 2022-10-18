@@ -1,14 +1,28 @@
 <template>
   <div class="card">
     <topPage />
+    <heroList :heroList="Heroes"/> 
   </div>
 </template>
 
 <script>
+import lodash from 'lodash.uniqueid'
+import uniqueId from 'lodash.uniqueid'
+
 export default {
   data() {
     return {
-      email: '',
+      Heroes: [
+        { heroName: 'Dr. Nice', id: uniqueId() },
+        { heroName: 'Bombasto', id: uniqueId() },
+        { heroName: 'Celeritas', id: uniqueId() },
+        { heroName: 'Magneta', id: uniqueId() },
+        { heroName: 'RubberMan', id: uniqueId() },
+        { heroName: 'Dynama', id: uniqueId() },
+        { heroName: 'Dr. IQ', id: uniqueId() },
+        { heroName: 'Magma', id: uniqueId() },
+        { heroName: 'Tornado', id: uniqueId() },
+      ],
     }
   },
 
