@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <h1 class="title">Tour of Heroes</h1>
-    <button>Dashboard</button>
-    <button>Heroes</button>
+  <div >
+    <h1>Tour of Heroes</h1>
+    <div class="block_btn">
+      <button class="space">Dashboard</button>
+      <button>Heroes</button>
+    </div>
   </div>
 </template>
 
@@ -11,16 +13,14 @@ export default {}
 </script>
 
 <style scoped>
-button {
-  background-color: lightgrey;
+.block_btn {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  margin: auto;
 }
 
-button:hover {
-  background-color: darkgrey;
-}
-
-.title {
-  font-size: 8vh;
-  color: darkblue;
+.space {
+  margin-right: 2rem;
 }
 </style>

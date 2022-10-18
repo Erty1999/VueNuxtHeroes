@@ -1,12 +1,14 @@
 <template>
-  <div>
-    <h3>{{ heroName }} Details</h3>
-    <p>id: {{ heroId }}</p>
-    <label for="changeDetails"> Hero name:</label>
-    <input id="changeDetails" type="text" :placeholder="heroName" />
+  <div class="details_block">
+    <h2>{{ heroName }} Details</h2>
+    <h3 class="id_style">id: {{ heroId }}</h3>
+    <label class="hero_label">
+      Hero name:
+      <input class="hero_input" type="text" :placeholder="heroName" />
+    </label>
     <br />
     <br />
-    <button>Back</button>
+    <button class="back_btn">Back</button>
   </div>
 </template>
 
@@ -22,44 +24,47 @@ export default {
 </script>
 
 <style scoped>
-div {
+.details_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: fit-content;
-  font-size: 4vh;
-  text-align: left;
-  background-color: lightgrey;
-  margin: 2vh 0 2vh 0;
-  padding: 1vh 2vh 2vh 2vh;
+  font-size: 1.8rem;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.id_style {
+  margin: 0 0 2rem 0;
+}
+
+.hero_input {
+  font-size: 1.8rem;
   border-style: solid;
   border-color: black;
   border-width: 2px;
-  border-radius: 1vh;
+  border-radius: var(--br);
+  padding-left: 1ch;
+  margin-left:1ch;
 }
 
-input {
-  font-size: 4vh;
-  width: 60%;
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
-  border-radius: 1vh;
-}
-
-label {
+.hero_label {
+  display: flex;
   font-weight: bold;
+  margin-bottom: 2rem;
 }
 
-button {
-  margin: 0vh 2vh 2vh 2vh;
+.back_btn {
   color: white;
   background-color: black;
 }
 
-button:hover {
+.back_btn:hover {
   background-color: rgb(79, 78, 78);
 }
 
-.title {
-  font-size: 8vh;
-  color: darkblue;
+.back_btn:active {
+  background-color: white;
+  color: black;
 }
 </style>

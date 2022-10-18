@@ -1,38 +1,49 @@
 <template>
-  <div>
-    <h1>Top Heroes</h1>
-    <button>Bombasto</button>
-    <button>Celeritas</button>
-    <button>Magneta</button>
-    <button>RubberMan</button>
+  <div class="block_dashboard">
+    <h2>Top Heroes</h2>
+    <div class="dash_buttons">
+      <button class="btn_topHero">Bombasto</button>
+      <button class="btn_topHero">Celeritas</button>
+      <button class="btn_topHero">Magneta</button>
+      <button class="btn_topHero">RubberMan</button>
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    heroList: { type: Array, default: () => [] },
+  },
+}
 </script>
 
 <style scoped>
-div {
+.block_dashboard {
+  display: flex;
+  flex-direction: column;
   width: fit-content;
-  background-color: lightgrey;
-  margin: 4vh 0 2vh 0;
-  padding: 1vh 2vh 2vh 2vh;
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
-  border-radius: 1vh;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 2rem;
 }
 
-button {
-  margin: 0vh 2vh 2vh 2vh;
+.dash_buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn_topHero {
   color: white;
   background-color: black;
-  white-space: nowrap;
-  overflow: hidden;
 }
 
-button:hover {
+.btn_topHero:hover {
   background-color: rgb(79, 78, 78);
+}
+
+.btn_topHero:active {
+  background-color: white;
+  color: black;
 }
 </style>

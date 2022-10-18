@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <span> {{ heroId || -1 }}</span>
-    <button>{{ heroName || 'unnamed' }}</button>
+  <div class="hero_btn">
+    <span class="id_btn"> {{ heroId || -1 }}</span>
+    <button class="name_btn">{{ heroName || 'unnamed' }}</button>
   </div>
 </template>
 
@@ -15,30 +15,30 @@ export default {
 </script>
 
 <style scoped>
-div {
+.hero_btn {
   display: flex;
   flex-direction: row;
-  margin: 1vh 0 1vh 0;
-  justify-content: center;
   align-items: center;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1vh;
   width: fit-content;
-  font-size: 4vh;
+  margin: 0.6rem 1rem;
+}
+
+.id_btn {
+  font-size: 1.8rem;
   background-color: black;
   color: white;
-}
+  padding: 1em;
+  border-top-left-radius: var(--br);
+  border-bottom-left-radius: var(--br);
+  height: 100%;
+  width: fit-content;
+  }
 
-span {
-  font-size: 4vh;
-  margin-left: 3vh;
-  margin-right: 2vh;
-}
-
-button {
+.name_btn {
+  height: 100%;
   width: fit-content;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  border: 2px solid black;
 }
 </style>

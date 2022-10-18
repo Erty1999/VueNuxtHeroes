@@ -1,15 +1,24 @@
 <template>
-  <div class="card">
+  <main class="card">
     <topPage />
-    <heroList :heroList="Heroes"/> 
-  </div>
+    <hr class="separation_row" />
+    <heroList :heroList="Heroes" />
+    <!--<dashboard :heroList="Heroes" />-->
+    <!-- <hero-details/> -->
+  </main>
 </template>
 
 <script>
+import style from '@/static/style.css'
 import lodash from 'lodash.uniqueid'
 import uniqueId from 'lodash.uniqueid'
+import dashboard from '~/components/dashboard.vue'
+import TopPage from '~/components/topPage.vue'
+import HeroList from '~/components/heroList.vue'
+import HeroDetails from '~/components/heroDetails.vue'
 
 export default {
+  components: { dashboard, TopPage, HeroList, HeroDetails },
   data() {
     return {
       Heroes: [
@@ -30,26 +39,18 @@ export default {
 }
 </script>
 
-<style>
-div {
-  text-align: center;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-button {
-  font-size: 4vh;
-  padding: 3vh;
-  border-radius: 1vh;
-  transition-duration: 0.2s;
+<style scoped>
+.separation_row {
+  padding: 0;
+  margin: 2rem 0;
+  width: 100%;
+  color: darkblue;
 }
 
 .card {
   width: fit-content;
-  margin: 2vh 0 0 0;
-  padding: 2vh;
-  border-style: solid;
-  border-color: darkblue;
-  border-width: 2px;
-  border-radius: 1vh;
+  padding: 0 2ch;
+  border: 2px solid darkblue;
+  border-radius: var(--br);
 }
 </style>
