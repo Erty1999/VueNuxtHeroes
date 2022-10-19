@@ -10,17 +10,4 @@
 export default {}
 </script>
 
-<style scoped>
-button {
-  background-color: lightgrey;
-}
-
-button:hover {
-  background-color: darkgrey;
-}
-
-.title {
-  font-size: 8vh;
-  color: darkblue;
-}
-</style>
+<style scoped></style>

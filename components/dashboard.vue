@@ -16,12 +16,12 @@ export default {}
 div {
   width: fit-content;
   background-color: lightgrey;
-  margin: 4vh 0 2vh 0;
-  padding: 1vh 2vh 2vh 2vh;
+  margin: 1rem 0;
+  padding: 1rem;
   border-style: solid;
   border-color: black;
   border-width: 2px;
-  border-radius: 1vh;
+  border-radius: var(--br);
 }
 
 button {

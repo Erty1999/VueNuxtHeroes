@@ -1,13 +1,19 @@
 <template>
-  <div class="card">
-    <topPage />
-    <heroList :heroList="Heroes"/> 
-  </div>
+  <main>
+    <div class="center card">
+      <!-- <topPage />
+      <heroList :heroList="Heroes" /> -->
+      <!-- <Dashboard /> -->
+      <HeroDetails />
+    </div>
+  </main>
 </template>
 
 <script>
-import lodash from 'lodash.uniqueid'
+import '/static/style.css'
 import uniqueId from 'lodash.uniqueid'
+import Dashboard from '~/components/dashboard.vueMagneta Details'
+import HeroDetails from '~/components/heroDetails.vue'
 
 export default {
   data() {
@@ -25,31 +31,9 @@ export default {
       ],
     }
   },
-
   methods: {},
+  components: { Dashboard, HeroDetails },
 }
 </script>
 
-<style>
-div {
-  text-align: center;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-button {
-  font-size: 4vh;
-  padding: 3vh;
-  border-radius: 1vh;
-  transition-duration: 0.2s;
-}
-
-.card {
-  width: fit-content;
-  margin: 2vh 0 0 0;
-  padding: 2vh;
-  border-style: solid;
-  border-color: darkblue;
-  border-width: 2px;
-  border-radius: 1vh;
-}
-</style>
+<style></style>

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <span> {{ heroId || -1 }}</span>
+  <div class="btn">
+    <span>{{ heroId || -1 }}</span>
     <button>{{ heroName || 'unnamed' }}</button>
   </div>
 </template>
@@ -15,29 +15,32 @@ export default {
 </script>
 
 <style scoped>
-div {
+.btn {
   display: flex;
   flex-direction: row;
-  margin: 1vh 0 1vh 0;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1vh;
-  width: fit-content;
-  font-size: 4vh;
-  background-color: black;
-  color: white;
+  font-size: 1.6rem;
 }
 
 span {
-  font-size: 4vh;
-  margin-left: 3vh;
-  margin-right: 2vh;
+  display: inline-flex;
+  justify-content: right;
+  text-align: center;
+  height: 100%;
+  min-width: 3ch;
+  padding: 0.6rem;
+  background-color: black;
+  color: white;
+  border-radius: var(--br);
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
 
 button {
-  width: fit-content;
+  height: 100%;
+  flex-grow: 1;
+  border: 1px solid black;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }

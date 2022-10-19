@@ -2,8 +2,10 @@
   <div>
     <h3>{{ heroName }} Details</h3>
     <p>id: {{ heroId }}</p>
-    <label for="changeDetails"> Hero name:</label>
-    <input id="changeDetails" type="text" :placeholder="heroName" />
+    <label>
+      Hero name:
+      <input type="text" :placeholder="heroName" />
+    </label>
     <br />
     <br />
     <button>Back</button>
