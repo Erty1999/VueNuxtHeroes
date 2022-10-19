@@ -1,15 +1,19 @@
 <template>
-  <div >
+  <div>
     <h1>Tour of Heroes</h1>
     <div class="block_btn">
-      <button class="space">Dashboard</button>
-      <button>Heroes</button>
+      <button class="space" v-on:click="change_view('dash')">Dashboard</button>
+      <button v-on:click="change_view('list')">Heroes</button>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    change_view: Function,
+  },
+}
 </script>
 
 <style scoped>

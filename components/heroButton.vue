@@ -1,7 +1,9 @@
 <template>
   <div class="hero_btn">
     <span class="id_btn"> {{ heroId || -1 }}</span>
-    <button class="name_btn">{{ heroName || 'unnamed' }}</button>
+    <button class="name_btn" v-on:click="change_view('detail', heroId)">
+      {{ heroName || 'unnamed' }}
+    </button>
   </div>
 </template>
 
@@ -9,7 +11,8 @@
 export default {
   props: {
     heroName: { required: true, type: String },
-    heroId: { type: Number },
+    heroId: { type: String },
+    change_view: Function,
   },
 }
 </script>
@@ -32,7 +35,7 @@ export default {
   border-bottom-left-radius: var(--br);
   height: 100%;
   width: fit-content;
-  }
+}
 
 .name_btn {
   height: 100%;

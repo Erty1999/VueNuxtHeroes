@@ -14,6 +14,7 @@
 export default {
   props: {
     heroList: { type: Array, default: () => [] },
+    change_view: Function,
   },
 }
 </script>

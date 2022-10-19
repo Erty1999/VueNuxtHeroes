@@ -1,16 +1,28 @@
 <template>
   <main class="card">
-    <topPage />
+    <topPage :change_view="show_component" />
     <hr class="separation_row" />
-    <heroList :heroList="Heroes" />
-    <!--<dashboard :heroList="Heroes" />-->
-    <!-- <hero-details/> -->
+    <heroList
+      :heroList="Heroes"
+      :change_view="show_component"
+      v-if="active_component === 'list'"
+    />
+    <dashboard
+      :heroList="Heroes"
+      :change_view="show_component"
+      v-if="active_component === 'dash'"
+    />
+    <hero-details
+      :hero="hero_details"
+      :back="back"
+      :change_hero="change"
+      v-if="active_component === 'detail'"
+    />
   </main>
 </template>
 
 <script>
-import style from '@/static/style.css'
-import lodash from 'lodash.uniqueid'
+import '@/static/style.css'
 import uniqueId from 'lodash.uniqueid'
 import dashboard from '~/components/dashboard.vue'
 import TopPage from '~/components/topPage.vue'
@@ -32,10 +44,44 @@ export default {
         { heroName: 'Magma', id: uniqueId() },
         { heroName: 'Tornado', id: uniqueId() },
       ],
+      active_component: String,
+      last_component: String,
+      hero_details: Object,
     }
   },
 
-  methods: {},
+  methods: {
+    show_component(componentName, idHero) {
+      if (componentName === 'detail') {
+        for (const hero of this.Heroes) {
+          if (hero.id === idHero) {
+            this.hero_details = hero
+            this.active_component = componentName
+            return
+          }
+        }
+      }
+      this.last_component = componentName
+      this.active_component = componentName
+    },
+
+    back() {
+      this.active_component = this.last_component
+    },
+
+    change(name, id) {
+      if (name !== '') {
+        for (const heroIdx in this.Heroes) {
+          const hero = this.Heroes[heroIdx]
+          if (hero.id === id) {
+            this.Heroes[heroIdx].heroName = name
+            this.active_component = this.last_component
+            return
+          }
+        }
+      }
+    },
+  },
 }
 </script>
 

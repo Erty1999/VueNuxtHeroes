@@ -7,6 +7,7 @@
         :key="hero.id"
         :heroId="hero.id"
         :heroName="hero.heroName"
+        :change_view="change_view"
       />
     </div>
   </div>
@@ -18,6 +19,7 @@ export default {
   components: { heroButton },
   props: {
     heroList: { type: Array, default: () => [] },
+    change_view: Function,
   },
 }
 </script>
