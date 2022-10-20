@@ -2,10 +2,14 @@
   <div class="block_dashboard">
     <h2>Top Heroes</h2>
     <div class="dash_buttons">
-      <button class="btn_topHero">Bombasto</button>
-      <button class="btn_topHero">Celeritas</button>
-      <button class="btn_topHero">Magneta</button>
-      <button class="btn_topHero">RubberMan</button>
+      <span 
+      v-for="hero in heroList" 
+      :key="hero.id" >
+      <button 
+      v-if="hero.id <=4"
+      class="btn_topHero"
+      v-on:click="change_view('detail', hero.id)">{{hero.heroName}}</button>
+      </span>
     </div>
   </div>
 </template>
